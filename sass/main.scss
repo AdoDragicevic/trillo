@@ -1,0 +1,87 @@
+/*
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+
+
+
+
+/*
+FLEXBOX
+
+
+CONTAINER:
+
+display: flex;
+display: flex-inline; // el will act as inline el
+
+flex-direction: row | row-reverse | column | column-reverse; 
+// specify direction of main axis
+
+flex-wrap: nowrap | wrap | wrap-reverse; 
+// will items go to next line if there not enough space
+
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly; 
+// align items across MAIN axis
+
+align-items: stretch | flex-start | flex-end | center | baseline; 
+// align items across CROSS axis;                                                                   
+// stretch increases size of all elements to the size of largest element
+// baseline aligns items to center relative to their content
+
+align-content: stretch | flex-start | flex-end | center | space-between | space-around; 
+// applies when there is multiple rows of flex items;   
+// alines rows across the CROSS axis
+// to see its effect clearly set container height to larger than necessary for the content
+// strech is default; it stretches the rows, not the items
+
+
+
+ITEMS:
+
+align-self: auto | stretch | flex-start | flex-end | center | baseline; 
+// equivalent of align-items, but for 1 item                                                                        
+// stretch gives it same height as height of largest el
+
+order: 0 | number; 
+// order in which this item appears inside container; default is 0 (al el have 0), 
+// we need to pick a negative num to   
+// place el as first (e.g. -1)
+
+flex-basis: auto | % | px | em | rem; 
+// item base width                                      
+// flex-basis: 20%; el will have width of 20% of the container
+
+flex-grow: 0 | number; 
+// ability of el to grow;
+// if all el have flex-grow: 1; they will all get the max width they can have
+// same will happen if all el have flex-grow: 22323; the number only matters in relation to other flex-grow numbers
+// if 1 el has flex-grow: 2; and all other have flex-grow: 1; it will grow 100% more than other el                       
+// flex: 1; // shrthand; makes el grow as much as possible
+
+flex-shrink: 1 | number; 
+// ability of el to shrink
+// default 1 means the element can shring                         
+// 0 means el will never shrink
+
+// shorthand:
+flex: 0 1 auto; 
+// grow, shrink, basis                
+// flex: 0 1 300px; el has width of 300px, it can shrink, it will never be larger than 300px
+// flex: 1; el grows as much as possible
+// flex: 0 1; el width is the min required for that el, it can shrink
+
+*/
