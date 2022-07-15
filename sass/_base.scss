@@ -1,0 +1,52 @@
+// :root is like html selector, but with higher specificity
+// we add variables here, so they are accessible through the entire document
+:root {
+  --color-primary:#eb2f64;
+  --color-primary-light: #FF3366;
+  --color-primary-dark:#BA265D;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+}
+
+/* CSS VARIABLES
+  - advantages of using CSS variables:
+  1. can be manipulated in JS
+  2. edited in dev tools
+  3. cascade & inherited
+  4. easier to use in calc()
+  - can only be declared inside a block
+  - if you declare a variable inslide h1 {} it can only be used inside those el and its children!
+*/
