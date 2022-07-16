@@ -68,4 +68,31 @@ flex: 0 1 auto;
 // flex: 1; el grows as much as possible
 // flex: 0 1; el width is the min required for that el, it can shrink
 
+
+
+CSS VARIABLES
+  - advantages of using CSS variables:
+  1. can be manipulated in JS
+  2. edited in dev tools
+  3. cascade & inherited
+  4. easier to use in calc()
+  - can only be declared inside a block
+  - if you declare a variable inslide h1 {} it can only be used inside those el and its children!
+
+
+  
+SVG
+- best practice is to replace icon-fonts with svg
+- icon-fonts fail more often, are worse for accessibility (screen readers), don't scale as well
+- https://icomoon.io/ allows you to convert icon-fonts to svg or use one of many free svg
+  - video on how to use it: https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8274592#questions/4070614
+- we download all svg into one sprite file
+- best way to use:
+  <svg class="search__icon">
+    <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+  </svg>
+  - this allows to change svg color in css
+  - this way (xlink:href) only works on a web server! Including local live-server
+- you can use svg inside CSS. However, it works with single svg, not with a sprite file (that would be possible, but difficult),
+  find expample in .list__item
 */
