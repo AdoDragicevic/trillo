@@ -11,6 +11,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+
+  @media only screen and (max-width: $bp-smallest) {
+    // default value is 0. This will move .search el to the end of flex-container
+    order: 1;
+    flex: 0 0 100%;
+    align-content: space-around;
+    background-color: var(--color-grey-light-2);
+  }
 
   &__input {
     font-family: inherit;
@@ -123,12 +132,27 @@
   margin-top: 3.5rem;
   list-style: none;
 
+  @media only screen and (max-width: $bg-medium){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+  }
+
 
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $bg-medium){
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: .5rem;
+
+      @media only screen and (max-width: $bg-medium){
+        margin-bottom: 0;
+      }
     }
 
     &::before {
@@ -177,6 +201,17 @@
     // ::before animation is below the link now
     position: relative; // z-inex only work if position is specified!
     z-index: 2;
+
+    @media only screen and (max-width: $bg-medium){
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bg-small){
+      flex-direction: column;
+      padding: 1.5rem .5rem;
+    }
+
   }
 
   &__icon {
@@ -188,6 +223,13 @@
     // if the link would change color when hovered, that color would automatically be appied here; without using
     // currentColor, we would have to specify it here as well for color change to happen
     fill: currentColor;
+
+    @media only screen and (max-width: $bg-small){
+      margin-right: 0;
+      margin-bottom: .7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
 }
@@ -199,6 +241,10 @@
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-dark-3);
+
+  @media only screen and (max-width: $bg-medium){
+    display: none;
+  }
 }
 
 
@@ -226,6 +272,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bg-small){
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -262,17 +313,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: $bg-small){
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media only screen and (max-width: $bg-small){
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: .8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bg-small){
+      font-size: .5rem;
+    }
   }
 
 }
@@ -388,12 +451,9 @@
   justify-content: space-between;
   align-items: center;
 
-  &__count {
-    
-  }
-
   &__friends {
-
+    // by adding flex child elements (&__photo) always stay side by side, and not break to new line
+    display: flex;
   }
 
   &__photo {
@@ -407,7 +467,7 @@
     box-sizing: content-box;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -421,6 +481,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bg-medium){
+    margin-bottom: 3rem;
+    padding: 2rem;
+  }
 
   &__text {
     margin-bottom: 2rem;

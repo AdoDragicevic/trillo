@@ -71,6 +71,7 @@ flex: 0 1 auto;
 
 
 CSS VARIABLES
+  - CSS variables can't be used in media queries! Sass variables can!
   - advantages of using CSS variables:
   1. can be manipulated in JS
   2. edited in dev tools
