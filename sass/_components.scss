@@ -425,21 +425,28 @@
       width: 1rem;
       margin-right: .7rem;
 
-      /* for older browsers
+      // for older browsers
       background-image: url("../img/chevron-thin-right.svg");
       background-size: cover;
-      */
 
       // for new browsers
-      // defines the area where we can look through the el, and see what's behind it
-      // similar to clipping
-      background-color: var(--color-primary);
-      -webkit-mask-image: url("../img/chevron-thin-right.svg");
-      -webkit-mask-size: cover;
-      mask-image: url("../img/chevron-thin-right.svg");
-      mask-size: cover;
+      // to check support we have to pass both property and its value
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        background-color: var(--color-primary);
+        background-image: none;
+
+        // defines the area where we can look through the el, and see what's behind it
+        // similar to clipping
+        -webkit-mask-image: url("../img/chevron-thin-right.svg");
+        -webkit-mask-size: cover;
+        mask-image: url("../img/chevron-thin-right.svg");
+        mask-size: cover;
+      }
+
     }
+
   }
+
 }
 
 
